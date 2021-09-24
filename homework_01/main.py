@@ -40,18 +40,29 @@ def filter_numbers(numbers, filter_type):
     <<< [2, 4]
     """
 
-    filtered_numbers = []
+    # version 1
+
+    #filtered_numbers = []
+    #if filter_type == ODD:
+    #    for number in numbers:
+    #        if number % 2 != 0:
+    #            filtered_numbers.append(number)
+    #elif filter_type == EVEN:
+    #    for number in numbers:
+    #        if number % 2 == 0:
+    #            filtered_numbers.append(number)
+    #else:
+    #    for number in numbers:
+    #        if is_prime(number):
+    #            filtered_numbers.append(number)
+    #return filtered_numbers
+
+    # version 2
+
     if filter_type == ODD:
-        for number in numbers:
-            if number % 2 != 0:
-                filtered_numbers.append(number)
+        return list(filter(lambda number: number % 2 != 0, numbers))
     elif filter_type == EVEN:
-        for number in numbers:
-            if number % 2 == 0:
-                filtered_numbers.append(number)
+        return list(filter(lambda number: number % 2 == 0, numbers))
     else:
-        for number in numbers:
-            if is_prime(number):
-                filtered_numbers.append(number)
-    return filtered_numbers
+        return list(filter(is_prime, numbers))
 
