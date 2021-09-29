@@ -15,7 +15,7 @@ from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 class Vehicle(ABC):
     
-    def __init__(self, weight = 1283, started, fuel = 70, fuel_consumption = 6):
+    def __init__(self, started, weight = 1283, fuel = 70, fuel_consumption = 6):
         self.weight = weight
         self.started = started
         self.fuel = fuel
@@ -26,7 +26,8 @@ class Vehicle(ABC):
         try:
             if self.started != started and self.fuel > 0:
                 return self.started
-        except LowFuelError
+        except LowFuelError:
+            print ("Low fuel level")
 
 
     def move(self, distance):
@@ -34,4 +35,5 @@ class Vehicle(ABC):
             fuel = distance / self.fuel_consumption
             if self.fuel >= fuel:
                 self.fuel -= fuel
-        except NotEnoughFuel 
+        except NotEnoughFuel:
+            print('Not enough fuel for a trip')
