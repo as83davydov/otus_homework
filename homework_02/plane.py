@@ -37,5 +37,5 @@ class Plane(Vehicle):
 		return removed_cargo
 
 
-boeing757 = Plane(100, 5, 30, 150)
-boeing757.load_cargo(157)
+# boeing757 = Plane(100, 5, 30, 150)
+# boeing757.load_cargo(157)

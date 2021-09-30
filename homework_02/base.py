@@ -27,7 +27,7 @@ class Vehicle(ABC):
             if self.fuel > 0:
                 self.started = True
             else:
-                raise LowFuelError('Low fuel')
+                raise LowFuelError('Low fuel level')
 
 
 
@@ -38,4 +38,4 @@ class Vehicle(ABC):
             self.fuel -= fuel
             return
         else:
-            raise NotEnoughFuel("Level zero")
+            raise NotEnoughFuel("NOT enought fuel for trip")
