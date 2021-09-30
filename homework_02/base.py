@@ -26,6 +26,7 @@ class Vehicle(ABC):
         try:
             if self.started != started and self.fuel > 0:
                 return self.started
+                # raise LowFuelError
         except LowFuelError:
             print ("Low fuel level")
 
