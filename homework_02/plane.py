@@ -17,15 +17,25 @@ from homework_02.exceptions import CargoOverload
 
 class Plane(Vehicle):
 
-	def __init__(self, cargo, max_cargo):
-		self.cargo = cargo
+	def __init__(self, weight, fuel, fuel_consumption, max_cargo):
+		super().__init__(weight, fuel,fuel_consumption)
+		self.cargo = 0
 		self.max_cargo = max_cargo
 
 
-	def load_cargo(self, number):
-		pass
+	def load_cargo(self, cargo_weight):
+		if self.max_cargo >= cargo_weight + self.cargo:
+			self.cargo += cargo_weight
+		else:
+			raise CargoOverload()
+		
 
 
 	def remove_all_cargo(self):
+		removed_cargo = self.cargo
 		self.cargo = 0
-		return cargo
+		return removed_cargo
+
+
+boeing757 = Plane(100, 5, 30, 150)
+boeing757.load_cargo(157)

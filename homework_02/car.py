@@ -14,9 +14,5 @@ from homework_02.engine import Engine
 
 class Car(Vehicle):
 
-	def __init__(self, engine):
+	def set_engine(self, engine):
 		self.engine = engine
-
-
-	def set_engine(self, Engine):
-		pass
